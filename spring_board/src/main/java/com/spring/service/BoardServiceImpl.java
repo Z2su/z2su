@@ -16,6 +16,7 @@ import com.spring.request.PageMaker;
 
 //@Service("boardService")
 public class BoardServiceImpl implements BoardService {
+	
 	//@Autowired
 	private PageBoardDAO boardDAO;
 	public void setBoardDAO(PageBoardDAO boardDAO) {
@@ -42,7 +43,10 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public BoardVO getBoard(int bno) throws SQLException {
 		BoardVO board = boardDAO.selectBoardByBno(bno);
+		int replycnt=replyDAO.countReply(bno);
+		board.setReplycnt(replycnt);
 		boardDAO.increaseViewCnt(bno);
+	
 		return board;
 	}
 

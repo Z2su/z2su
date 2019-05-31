@@ -5,18 +5,17 @@ import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-
 
 import com.spring.dto.ReplyVO;
 import com.spring.request.Criteria;
 
 public class ReplyDAOImpl implements ReplyDAO{
-
+	
 	private SqlSession session;
 	public void setSession(SqlSession session) {
-		this.session = session;
+		this.session=session;
 	}
+	
 	@Override
 	public void insertReply(ReplyVO reply) throws SQLException {
 		session.update("Reply-Mapper.insertReply",reply);

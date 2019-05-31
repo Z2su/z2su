@@ -5,17 +5,17 @@ import java.util.List;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.spring.dto.PdsVO;
 import com.spring.request.Criteria;
 
 public class PdsDAOImpl implements PdsDAO {
-
+	
 	private SqlSession session;
 	public void setSession(SqlSession session) {
-		this.session = session;
+		this.session=session;
 	}
+	
 	@Override
 	public List<PdsVO> selectPdsCriteria(Criteria cri) throws SQLException {
 		
@@ -76,6 +76,7 @@ public class PdsDAOImpl implements PdsDAO {
 		
 		session.update("Pds-Mapper.increaseViewCnt",pno);
 		
+		session.close();
 
 	}
 

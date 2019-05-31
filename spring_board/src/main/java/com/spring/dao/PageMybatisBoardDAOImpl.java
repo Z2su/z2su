@@ -10,17 +10,16 @@ import com.spring.dto.BoardVO;
 import com.spring.request.Criteria;
 
 public class PageMybatisBoardDAOImpl implements PageBoardDAO {
-
+	
 	private SqlSession session;
 	public void setSession(SqlSession session) {
-		this.session = session;
+		this.session=session;
 	}
 	
 	private MybatisBoardDAOImpl instance;
 	public void setInstance(MybatisBoardDAOImpl instance) {
-		this.instance = instance;
+		this.instance=instance;
 	}
-	
 	
 	@Override
 	public List<BoardVO> selectBoardCriteria(Criteria cri) throws SQLException {
@@ -37,7 +36,6 @@ public class PageMybatisBoardDAOImpl implements PageBoardDAO {
 	
 	@Override
 	public int selectBoardCriteriaTotalCount(Criteria cri) throws SQLException {
-				
 		List<BoardVO> boardList=
 				session.selectList("Board-Mapper.selectSearchBoardList",cri);
 		return boardList.size();

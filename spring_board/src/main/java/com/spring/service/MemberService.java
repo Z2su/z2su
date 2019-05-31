@@ -25,8 +25,7 @@ public interface MemberService {
 	// 회원리스트
 	List<MemberVO> getMemberList()throws SQLException;
 	
-	Map<String, Object> getMemberList(Criteria cri) throws SQLException;
-	
+	Map<String,Object> getMemberList(Criteria cri)throws SQLException;
 	
 	//회원수정
 	void modify(MemberVO member)throws SQLException;
@@ -34,7 +33,9 @@ public interface MemberService {
 	//회원삭제
 	void remove(String id)throws SQLException;
 	
-	void disable(String id) throws SQLException;
+	//회원 비활성
+	void disable(String id)throws SQLException;
+	
 	
 }
 

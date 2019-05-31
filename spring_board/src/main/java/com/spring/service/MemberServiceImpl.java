@@ -61,14 +61,14 @@ public class MemberServiceImpl implements MemberService{
 	}
 	@Override
 	public Map<String, Object> getMemberList(Criteria cri) throws SQLException {
-		List<MemberVO> memberList = memberDAO.selectMemberList(cri);
+		
+		List<MemberVO> memberList=memberDAO.selectMemberList(cri);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(cri);
 		pageMaker.setTotalCount(memberDAO.selectMemberListCount(cri));
 		
-		
-		Map<String, Object> dataMap = new HashMap<String,Object>();
+		Map<String,Object> dataMap=new HashMap<String,Object>();
 		dataMap.put("memberList", memberList);
 		dataMap.put("pageMaker", pageMaker);
 		

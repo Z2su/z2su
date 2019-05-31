@@ -4,26 +4,20 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.spring.dto.BoardVO;
 
-public class MybatisBoardDAOImpl implements BoardDAO {
+public class MybatisBoardDAOImpl implements BoardDAO {		
 	
 	private SqlSession session;
-	
 	public void setSession(SqlSession session) {
-		this.session = session;
+		this.session=session;
 	}
-	
-	
-	
 	
 	@Override
 	public List<BoardVO> selectBoardList() throws SQLException {
-		List<BoardVO> boardList= 
+		List<BoardVO> boardList=
 				session.selectList("Board-Mapper.selectBoardList",null);		
-		session.close();		
 		return boardList;
 	}
 

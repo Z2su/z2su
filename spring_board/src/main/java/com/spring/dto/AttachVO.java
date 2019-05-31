@@ -3,28 +3,21 @@ package com.spring.dto;
 import java.util.Date;
 
 public class AttachVO {
+	
 	private int ano;
 	private String uploadPath;
 	private String fileName;
 	private String fileType;
 	private int pno;
+	private int nno;
 	private String attacher;
 	private Date regDate;
 	
-	
-	
-	public AttachVO() {}
-	public AttachVO(int ano, String uploadPath, String fileName, String fileType, int pno, String attacher,
-			Date regDate) {
-		super();
-		this.ano = ano;
-		this.uploadPath = uploadPath;
-		this.fileName = fileName;
-		this.fileType = fileType;
-		this.pno = pno;
-		this.attacher = attacher;
-		this.regDate = regDate;
-		
+	public int getNno() {
+		return nno;
+	}
+	public void setNno(int nno) {
+		this.nno = nno;
 	}
 	public int getAno() {
 		return ano;
@@ -68,17 +61,13 @@ public class AttachVO {
 	public void setRegDate(Date regDate) {
 		this.regDate = regDate;
 	}
-	
-	
 	@Override
 	public String toString() {
 		return "AttachVO [ano=" + ano + ", uploadPath=" + uploadPath + ", fileName=" + fileName + ", fileType="
-				+ fileType + ", pno=" + pno + ", attacher=" + attacher + ", regDate=" + regDate + ", updateDate="
-				+ "]";
+				+ fileType + ", pno=" + pno + ", nno=" + nno + ", attacher=" + attacher + ", regDate=" + regDate + "]";
 	}
 
 	
 	
 	
-
 }

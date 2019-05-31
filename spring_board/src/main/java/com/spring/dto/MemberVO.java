@@ -1,7 +1,5 @@
 package com.spring.dto;
 
-import java.util.List;
-
 public class MemberVO {
 	
 	private String id;
@@ -11,12 +9,7 @@ public class MemberVO {
 	private String picture;
 	private String authority;
 	private int enabled;
-	public String getAuthority() {
-		return authority;
-	}
-	public void setAuthority(String authority) {
-		this.authority = authority;
-	}
+	
 	public String getId() {
 		return id;
 	}
@@ -47,20 +40,23 @@ public class MemberVO {
 	public void setPicture(String picture) {
 		this.picture = picture;
 	}
-	
+	public String getAuthority() {
+		return authority;
+	}
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
 	public int getEnabled() {
 		return enabled;
 	}
 	public void setEnabled(int enabled) {
 		this.enabled = enabled;
 	}
-	
 	@Override
 	public String toString() {
 		return "MemberVO [id=" + id + ", pwd=" + pwd + ", phone=" + phone + ", email=" + email + ", picture=" + picture
 				+ ", authority=" + authority + ", enabled=" + enabled + "]";
 	}
-
 	
 	
 	
